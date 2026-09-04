@@ -1,0 +1,168 @@
+.historial-page {
+  background: linear-gradient(180deg, #eef5ff 0, var(--bg-app) 260px);
+}
+
+.historial-contenedor {
+  max-width: 640px;
+}
+
+.historial-encabezado {
+  align-items: flex-start;
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.historial-encabezado .btn {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.historial-encabezado h1 {
+  font-size: 1.7rem;
+  margin-bottom: 4px;
+}
+
+.historial-etiqueta {
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.historial-encabezado p:last-child {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.historial-seccion h2 {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+
+#contenedor-historial {
+  display: grid;
+  gap: 14px;
+}
+
+#sec-envios {
+  margin-top: 30px;
+}
+
+#contenedor-envios {
+  display: grid;
+  gap: 14px;
+}
+
+.tarjeta-envio {
+  background: var(--card-bg);
+  border: 1px solid #dce6f2;
+  border-left: 5px solid #2563eb;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.tarjeta-envio p {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.tarjeta-envio .reserva-estado {
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tarjeta-historial {
+  border: 1px solid #dce6f2;
+  border-left: 5px solid var(--success);
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.historial-ruta {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.historial-ruta h3 {
+  font-size: 1rem;
+}
+
+.historial-icono {
+  align-items: center;
+  background: #e8f7ed;
+  border-radius: 50%;
+  color: var(--success);
+  display: flex;
+  flex: 0 0 28px;
+  font-weight: 800;
+  height: 28px;
+  justify-content: center;
+  width: 28px;
+}
+
+.historial-detalles {
+  background: #f8fafc;
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.historial-detalles p {
+  align-items: baseline;
+  display: flex;
+  font-size: 0.84rem;
+  justify-content: space-between;
+}
+
+.historial-detalles span,
+.historial-pie p {
+  color: var(--text-muted);
+}
+
+.historial-pie {
+  align-items: center;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.historial-pie p {
+  font-size: 0.84rem;
+}
+
+.historial-pie .reserva-estado {
+  background: #e8f7ed;
+  border-radius: 999px;
+  color: #217a3c !important;
+  font-size: 0.72rem;
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .historial-encabezado {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .historial-encabezado .btn {
+    align-self: flex-start;
+  }
+
+  .historial-pie {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

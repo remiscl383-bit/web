@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - RemisCL</title>
+  <!-- Enlace al CSS universal -->
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/inicio.css">
+  <link rel="stylesheet" href="../css/tema-oscuro.css">
+</head>
+<body class="pagina-inicio">
+
+  <header class="header-app inicio-encabezado">
+    <div class="info-usuario">
+      <h1 id="nombre-usuario">¡Bienvenido a RemisCL!</h1>
+      <p id="correo-usuario" class="correo-usuario oculto"></p>
+      <p id="subtitulo-estado">Movilidad local para tus viajes y envíos</p>
+    </div>
+    <div class="acciones-header">
+      <button type="button" id="btn-tema" class="btn-tema" aria-label="Cambiar a tema claro">☼</button>
+      <button id="btn-logout" class="btn btn-peligro oculto">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="contenedor-principal">
+    <section class="grid-servicios" aria-label="Servicios disponibles">
+
+      <!-- Opción 1: Próximas Salidas -->
+      <article class="tarjeta">
+        <span class="icono-fondo" aria-hidden="true">🚗</span>
+        <h3>Próximas salidas</h3>
+        <p>Reservá tu asiento en viajes programados por nuestros choferes.</p>
+        <a href="proximas-salidas.html" class="btn btn-principal btn-accion">Ver salidas</a>
+      </article>
+
+      <!-- Opción 2: Pedido Particular -->
+      <article class="tarjeta">
+        <span class="icono-fondo" aria-hidden="true">⚡</span>
+        <h3>Remis particular</h3>
+        <p>Solicitá un auto exclusivo para tu traslado inmediato o programado.</p>
+        <a href="particular.html" class="btn btn-principal btn-accion">Solicitar viaje</a>
+      </article>
+
+      <!-- Opción 3: Paquetería -->
+      <article class="tarjeta">
+        <span class="icono-fondo" aria-hidden="true">📦</span>
+        <h3>Envíos y paquetería</h3>
+        <p>Mandá o recibí encomiendas dentro de la zona de forma segura.</p>
+        <a href="paqueteria.html" class="btn btn-principal btn-accion">Publicar retiro</a>
+      </article>
+
+      <!-- Opción 4: Mis Reservas -->
+      <article class="tarjeta">
+        <span class="icono-fondo" aria-hidden="true">🕒</span>
+        <h3>Mis reservas</h3>
+        <p>Consultá el estado y el historial de tus reservas.</p>
+        <a href="mis-reservas.html" class="btn btn-principal btn-accion">Ver mis reservas</a>
+      </article>
+
+    </section>
+  </main>
+
+  <script type="module" src="../js/inicio.js"></script>
+  <script src="../js/tema.js"></script>
+</body>
+</html>
