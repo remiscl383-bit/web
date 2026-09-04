@@ -1,0 +1,178 @@
+.pagina-mis-reservas {
+  background: linear-gradient(180deg, #eef5ff 0, var(--bg-app) 320px);
+  padding: 16px;
+}
+
+.reservas-contenedor {
+  max-width: 640px;
+}
+
+.header-nav {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.reservas-encabezado {
+  display: block;
+  min-height: 72px;
+  position: relative;
+  text-align: center;
+}
+
+.reservas-encabezado > .btn {
+  left: 0;
+  padding: 10px 16px;
+  position: absolute;
+  top: 0;
+  width: fit-content;
+}
+
+.reservas-encabezado h1 {
+  font-size: 1.7rem;
+  line-height: 1.15;
+  margin: 3px 0 5px;
+}
+
+.reservas-encabezado > div {
+  margin: 0 auto;
+  max-width: 360px;
+}
+
+.reservas-etiqueta {
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reservas-subtitulo {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.btn-historial {
+  margin: 16px 0 8px;
+  width: auto;
+}
+
+#sec-mis-reservas {
+  margin-bottom: 24px;
+}
+
+#sec-mis-pedidos {
+  margin-bottom: 24px;
+}
+
+#sec-mis-pedidos h3 {
+  border-bottom: 1px solid #dce6f2;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+
+#sec-mis-reservas h3 {
+  border-bottom: 1px solid #dce6f2;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+
+#contenedor-reservas-salidas {
+  display: grid;
+  gap: 12px;
+}
+
+.reserva-salida {
+  border: 1px solid #dce6f2;
+  border-left: 5px solid var(--primary);
+  box-shadow: 0 8px 20px rgba(34, 65, 110, 0.08);
+  padding: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reserva-salida:hover {
+  box-shadow: 0 10px 24px rgba(34, 65, 110, 0.12);
+  transform: translateY(-2px);
+}
+
+.reserva-salida .reserva-ruta {
+  color: #17365d;
+  font-size: 1.08rem;
+  letter-spacing: 0;
+}
+
+.reserva-salida .reserva-chofer {
+  color: #17365d;
+}
+
+.reserva-salida .reserva-total {
+  color: var(--success);
+  font-size: 1rem;
+}
+
+.reserva-salida .reserva-estado {
+  background: #eaf3ff;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.76rem;
+  padding: 5px 9px;
+  width: fit-content;
+}
+
+.reserva-salida .reserva-aviso-cancelacion {
+  background: #fff8e1;
+  border-left: 3px solid #f0ad4e;
+  color: #7a5b00;
+  font-size: 0.8rem;
+  padding: 8px 10px;
+}
+
+.reserva-salida {
+  display: grid;
+  gap: 8px;
+}
+
+.reserva-salida p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.reserva-ruta {
+  font-size: 1rem;
+}
+
+.reserva-estado {
+  color: var(--primary) !important;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.reserva-acciones {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.reserva-acciones .btn {
+  width: auto;
+}
+
+@media (max-width: 560px) {
+  .header-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .reservas-encabezado > .btn {
+    left: 0;
+    top: 0;
+    width: fit-content;
+  }
+
+  .reserva-acciones .btn {
+    width: 100%;
+  }
+}

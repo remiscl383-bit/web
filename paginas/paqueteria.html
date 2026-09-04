@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envíos y paquetería - RemisCL</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/paqueteria.css">
+  <link rel="stylesheet" href="../css/tema-oscuro.css">
+</head>
+<body class="pagina-paqueteria">
+
+  <div class="app-container">
+    <header class="paqueteria-header">
+      <nav class="paqueteria-nav" aria-label="Navegación principal">
+        <a href="inicio.html" class="btn btn-secondary">Inicio</a>
+      </nav>
+      <p class="paqueteria-etiqueta">RemisCL</p>
+      <h1>Envíos y paquetería</h1>
+      <p class="subtitle">Conectate con un chofer para coordinar el retiro de tu paquete.</p>
+    </header>
+
+    <main>
+      <section class="paqueteria-intro" aria-labelledby="titulo-solicitud-paquete">
+        <p class="section-kicker">Nueva solicitud</p>
+        <h2 id="titulo-solicitud-paquete">Lugar de retiro</h2>
+        <p>Publicá el lugar donde necesitás que retiren tu paquete.</p>
+      </section>
+
+      <form id="form-paqueteria">
+        <div class="form-grid">
+          <div class="form-group form-group-wide">
+            <label for="paq-origen">Dirección o lugar de retiro</label>
+            <input type="text" id="paq-origen" placeholder="Ej: Campo Largo, Barrio Centro" required>
+          </div>
+
+          <div class="form-group form-group-wide">
+            <label for="paq-hora-retiro">Hora de retiro</label>
+            <input type="time" id="paq-hora-retiro" required>
+          </div>
+        </div>
+
+        <div class="aviso-paqueteria">
+          <strong>¿Cómo funciona?</strong>
+          <p>Esta publicación tiene como objetivo conectarte con choferes disponibles en la zona de retiro. En este formulario solo necesitamos que indiques si el paquete debe retirarse en Campo Largo o en Sáenz Peña. La información exacta del retiro y envío podrá coordinarse directamente con el chofer que se comunique con vos por WhatsApp. Una vez coordinado el servicio, te pedimos retirar la publicación; de lo contrario, se eliminará automáticamente después de 6 horas.</p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-enviar-paquete" class="btn btn-primary accion-privada btn-accion">Hacer publicación</button>
+        </div>
+        <p id="mensaje-confirmacion" class="mensaje-confirmacion" aria-live="polite"></p>
+      </form>
+    </main>
+
+  </div>
+
+  <script type="module" src="../js/paqueteria.js"></script>
+  <script src="../js/tema.js"></script>
+</body>
+</html>

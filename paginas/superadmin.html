@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Panel de administración - RemisCL</title>
+	<style>
+		:root{--bg:#f5f7fb;--card:#fff;--accent:#0b74de;--muted:#6b7280}
+		html,body{height:100%;margin:0;font-family:Inter,system-ui,Roboto,Arial;background:var(--bg)}
+		.container{max-width:1100px;margin:28px auto;padding:20px}
+		header{display:flex;align-items:center;justify-content:space-between;padding:16px;background:var(--card);border-radius:10px;box-shadow:0 6px 18px rgba(12,20,40,0.06)}
+		h1{margin:0;font-size:20px;color:#0f172a}
+		.btn-logout{background:#ffeef0;color:#b91c1c;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600}
+		section.panel{margin-top:16px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(12,20,40,0.04)}
+		section.panel h2{margin:0 0 12px;font-size:16px}
+		.table{width:100%;border-collapse:collapse}
+		.table thead th{text-align:left;padding:10px;border-bottom:1px solid #eef2f6;color:#374151}
+		.table tbody td{padding:10px;border-bottom:1px solid #f3f6f9;color:#111827}
+		.badge{display:inline-block;padding:6px 8px;border-radius:8px;font-size:12px}
+		.badge-pendiente{background:#fff7ed;color:#b45309}
+		.badge-activo{background:#ecfdf5;color:#059669}
+		.badge-suspendido{background:#fef2f2;color:#b91c1c}
+		button{font:inherit}
+		.btn-aprobar,.btn-suspender,.btn-editar{border:0;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;margin:2px;padding:6px 8px}
+		.btn-aprobar{background:#dcfce7;color:#166534}.btn-suspender{background:#fee2e2;color:#991b1b}.btn-editar{background:#e0f2fe;color:#075985}
+		.modal-admin{align-items:center;background:rgba(15,23,42,.55);display:flex;inset:0;justify-content:center;padding:20px;position:fixed;z-index:10}
+		.modal-admin.oculto{display:none}
+		.modal-admin-contenido{background:#fff;border-radius:12px;box-shadow:0 20px 50px rgba(12,20,40,.2);max-height:90vh;max-width:700px;overflow:auto;padding:22px;width:100%}
+		.modal-admin-contenido h2{color:#0f172a;margin:0 0 18px}
+		.form-editar-grid{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+		.form-editar-grid label{color:#374151;font-size:13px;font-weight:600}.form-editar-grid input{border:1px solid #d1d5db;border-radius:6px;display:block;margin-top:5px;padding:9px;width:100%}
+		.modal-admin-acciones{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}.btn-admin{background:#e5e7eb;border:0;border-radius:6px;cursor:pointer;padding:10px 14px}.btn-admin-principal{background:var(--accent);color:#fff}
+		.table{display:block;overflow-x:auto;white-space:nowrap}
+		.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+		@media(max-width:800px){.grid{grid-template-columns:1fr}.form-editar-grid{grid-template-columns:1fr}}
+	</style>
+	<link rel="stylesheet" href="../css/superadmin.css">
+	<link rel="stylesheet" href="../css/tema-oscuro.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Panel de administración</h1>
+			<div>
+				<button id="btn-logout" class="btn-logout">Cerrar sesión</button>
+			</div>
+		</header>
+
+		<section class="panel">
+			<div class="panel-heading-control">
+				<h2>Choferes pendientes de habilitación</h2>
+				<button type="button" class="btn-ventana" data-target="contenido-choferes" aria-expanded="true" aria-label="Contraer choferes">↓</button>
+			</div>
+			<div id="contenido-choferes">
+				<label class="buscador-usuarios" for="buscar-choferes">Buscar chofer por nombre o apellido</label>
+				<input id="buscar-choferes" class="input-busqueda" type="search" placeholder="Nombre o apellido">
+				<div id="lista-choferes-pendientes">
+				<table class="table" aria-describedby="Choferes pendientes">
+					<thead>
+						<tr><th>Nombre</th><th>DNI</th><th>Correo</th><th>WhatsApp</th><th>Vehículo</th><th>Patente</th><th>Acciones</th></tr>
+					</thead>
+					<tbody id="tbody-choferes-pendientes"></tbody>
+				</table>
+				</div>
+			</div>
+		</section>
+
+		<div class="grid">
+			<section class="panel">
+					<div class="panel-heading-control">
+						<h2>Todos los choferes</h2>
+						<button type="button" class="btn-ventana" data-target="contenido-choferes-todos" aria-expanded="true" aria-label="Contraer todos los choferes">↓</button>
+					</div>
+					<div id="contenido-choferes-todos">
+						<label class="buscador-usuarios" for="buscar-choferes-todos">Buscar chofer por nombre o apellido</label>
+						<input id="buscar-choferes-todos" class="input-busqueda" type="search" placeholder="Nombre o apellido">
+					<div id="lista-choferes-todos">
+					<table class="table">
+						<thead>
+							<tr><th>Nombre</th><th>DNI</th><th>Email</th><th>WhatsApp</th><th>Vehículo</th><th>Patente</th><th>Estado y acciones</th></tr>
+						</thead>
+						<tbody id="tbody-choferes-todos"></tbody>
+					</table>
+				</div>
+				</div>
+			</section>
+
+			<section class="panel">
+					<div class="panel-heading-control">
+						<h2>Clientes registrados</h2>
+						<button type="button" class="btn-ventana" data-target="contenido-clientes" aria-expanded="true" aria-label="Contraer clientes">↓</button>
+					</div>
+					<div id="contenido-clientes">
+						<label class="buscador-usuarios" for="buscar-clientes">Buscar cliente por nombre o apellido</label>
+						<input id="buscar-clientes" class="input-busqueda" type="search" placeholder="Nombre o apellido">
+					<div id="lista-clientes">
+					<table class="table">
+						<thead>
+							<tr><th>Nombre</th><th>Apellido</th><th>Email</th><th>Teléfono</th><th>Estado y acciones</th></tr>
+						</thead>
+						<tbody id="tbody-clientes"></tbody>
+					</table>
+				</div>
+				</div>
+			</section>
+		</div>
+
+		<div id="modal-editar-usuario" class="modal-admin oculto" role="dialog" aria-modal="true" aria-labelledby="titulo-editar-usuario">
+			<div class="modal-admin-contenido">
+				<h2 id="titulo-editar-usuario">Editar datos del usuario</h2>
+				<form id="form-editar-usuario">
+					<input type="hidden" id="editar-id">
+					<div class="form-editar-grid">
+						<label>Nombre<input id="editar-nombre" type="text"></label>
+						<label>Apellido<input id="editar-apellido" type="text"></label>
+						<label>DNI<input id="editar-dni" type="text"></label>
+						<label>Email<input id="editar-email" type="email"></label>
+						<label>WhatsApp<input id="editar-whatsapp" type="text"></label>
+						<label>Teléfono<input id="editar-telefono" type="text"></label>
+						<label>Vehículo<input id="editar-vehiculo" type="text"></label>
+						<label>Patente<input id="editar-patente" type="text"></label>
+						<label>Dirección<input id="editar-direccion" type="text"></label>
+					</div>
+					<div class="modal-admin-acciones">
+						<button type="button" id="cancelar-edicion" class="btn-admin">Cancelar</button>
+						<button type="button" id="restablecer-contrasena" class="btn-admin">Enviar restablecimiento</button>
+						<button type="submit" class="btn-admin btn-admin-principal">Guardar cambios</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="module" src="../js/superadmin.js"></script>
+	<script src="../js/tema.js"></script>
+</body>
+</html>
+

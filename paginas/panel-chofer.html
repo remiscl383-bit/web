@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Chofer - RemisCL</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/panel-chofer.css">
+  <link rel="stylesheet" href="../css/tema-oscuro.css">
+</head>
+<body class="panel-chofer">
+  <main class="panel-contenedor">
+    <header class="panel-encabezado">
+      <div>
+        <p class="panel-etiqueta">RemisCL</p>
+        <h1>Panel de chofer</h1>
+        <p id="nombre-chofer" class="texto-muted">Cargando cuenta...</p>
+      </div>
+      <button type="button" id="btn-tema" class="btn-tema" aria-label="Cambiar a tema claro">☼</button>
+      <button type="button" id="btn-logout" class="btn btn-secundario">Salir</button>
+    </header>
+
+    <a href="viajes-programados.html" class="btn btn-principal btn-panel-programados">
+      Publicar viajes
+    </a>
+
+    <section class="panel-seccion" aria-labelledby="titulo-salidas">
+      <div class="seccion-heading">
+        <h2 id="titulo-salidas">Mis salidas publicadas</h2>
+        <span class="indicador-tiempo-real">En tiempo real</span>
+        <span class="contador-seccion" id="contador-salidas" hidden>0</span>
+        <button type="button" class="btn-desplazar" data-target="lista-salidas" aria-expanded="true" aria-label="Contraer salidas publicadas" hidden>↓</button>
+      </div>
+      <div id="lista-salidas" class="lista-panel"></div>
+    </section>
+
+    <section class="panel-seccion" aria-labelledby="titulo-pedidos">
+      <div class="seccion-heading">
+        <h2 id="titulo-pedidos">Pedidos de remises particulares</h2>
+        <span class="contador-seccion" id="contador-pedidos" hidden>0</span>
+        <button type="button" class="btn-desplazar" data-target="lista-pedidos-particulares" aria-expanded="true" aria-label="Contraer pedidos particulares" hidden>↓</button>
+      </div>
+      <div id="lista-pedidos-particulares" class="lista-panel"></div>
+    </section>
+
+    <section class="panel-seccion" aria-labelledby="titulo-paquetes">
+      <div class="seccion-heading">
+        <h2 id="titulo-paquetes">Solicitudes de envíos y paquetería</h2>
+        <span class="contador-seccion" id="contador-paquetes" hidden>0</span>
+        <button type="button" class="btn-desplazar" data-target="lista-paquetes" aria-expanded="true" aria-label="Contraer envíos y paquetería" hidden>↓</button>
+      </div>
+      <div id="lista-paquetes" class="lista-panel"></div>
+    </section>
+
+    <section class="panel-seccion" aria-labelledby="titulo-en-curso">
+      <div class="seccion-heading">
+        <h2 id="titulo-en-curso">En curso</h2>
+        <span class="indicador-tiempo-real">En tiempo real</span>
+        <span class="contador-seccion" id="contador-en-curso" hidden>0</span>
+        <button type="button" class="btn-desplazar" data-target="lista-en-curso" aria-expanded="true" aria-label="Contraer viajes en curso" hidden>↓</button>
+      </div>
+      <div id="lista-en-curso" class="lista-panel"></div>
+    </section>
+
+    <section class="panel-seccion" aria-labelledby="titulo-historial">
+      <div class="seccion-heading">
+        <h2 id="titulo-historial">Historial</h2>
+        <span class="contador-seccion" id="contador-historial" hidden>0</span>
+        <button type="button" class="btn-desplazar" data-target="contenido-historial" aria-expanded="true" aria-label="Contraer historial" hidden>↓</button>
+      </div>
+      <div id="contenido-historial">
+        <div id="lista-historial" class="lista-panel"></div>
+      <h3 class="subtitulo-historial">Salidas finalizadas</h3>
+      <div id="lista-historial-salidas" class="lista-panel"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/panel-chofer.js"></script>
+  <script src="../js/tema.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+.pagina-inicio {
+  align-items: flex-start;
+  background: #e8edf3;
+  color: #172033;
+  font-family: Georgia, 'Times New Roman', serif;
+  padding: 42px 20px;
+}
+
+.inicio-contenedor {
+  background: #fdfcf9;
+  border: 1px solid #d5d9de;
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(31, 45, 61, 0.16);
+  margin: 0 auto;
+  max-width: 980px;
+  overflow: hidden;
+  padding: 34px 54px 54px;
+  width: 100%;
+}
+
+.inicio-accesos {
+  display: flex;
+  gap: 10px;
+}
+
+.inicio-accesos .btn {
+  width: auto;
+}
+
+.bienvenida {
+  border-bottom: 1px solid #d7dce1;
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 48px 0 72px;
+  position: relative;
+}
+
+.bienvenida::before {
+  background: #d97735;
+  content: '';
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 72px;
+}
+
+.inicio-etiqueta {
+  color: #bf5b25;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.bienvenida h1 {
+  color: #1f2d3d;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-weight: 500;
+  line-height: 0.94;
+  margin-bottom: 22px;
+  max-width: 700px;
+}
+
+.bienvenida p:not(.inicio-etiqueta),
+.inicio-cierre p,
+.pilares p {
+  color: #637080;
+  font-family: 'Trebuchet MS', sans-serif;
+  line-height: 1.7;
+}
+
+.bienvenida-destacada {
+  color: #334155 !important;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+
+.como-funciona {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 68px 0;
+}
+
+.como-funciona h2,
+.inicio-cierre h2 {
+  color: #1f2d3d;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.pilares {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pilares article {
+  background: #f3f1eb;
+  border-left: 3px solid #d97735;
+  border-radius: 2px;
+  padding: 24px 20px;
+}
+
+.pilares article:nth-child(2) {
+  border-left-color: #4f7180;
+}
+
+.pilares article:nth-child(3) {
+  border-left-color: #b38b57;
+}
+
+.pilares h3 {
+  color: #1f2d3d;
+  font-family: Georgia, 'Times New Roman', serif;
+  margin-bottom: 8px;
+}
+
+.inicio-cierre {
+  background: #1f2d3d;
+  border-radius: 3px;
+  color: #ffffff;
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 34px;
+}
+
+.inicio-cierre h2 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.inicio-cierre p {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #cbd5e1;
+  margin-bottom: 22px;
+}
+
+.inicio-cierre .btn-secondary {
+  border-color: #cbd5e1;
+  color: #ffffff;
+}
+
+@media (max-width: 680px) {
+  .pagina-inicio {
+    padding: 12px 10px;
+  }
+
+  .inicio-contenedor {
+    padding: 22px 20px 30px;
+  }
+
+  .inicio-accesos {
+    flex-direction: column;
+  }
+
+  .inicio-accesos .btn {
+    width: 100%;
+  }
+
+  .bienvenida {
+    padding: 42px 0 48px;
+  }
+
+  .como-funciona {
+    padding: 44px 0;
+  }
+
+  .pilares {
+    grid-template-columns: 1fr;
+  }
+
+  .inicio-cierre {
+    padding: 26px 20px;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar viaje - RemisCL</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/panel-chofer.css">
+  <link rel="stylesheet" href="../css/tema-oscuro.css">
+</head>
+<body class="panel-chofer">
+  <main class="panel-contenedor">
+    <header class="panel-encabezado">
+      <div>
+        <p class="panel-etiqueta">RemisCL</p>
+        <h1>Publicar un viaje</h1>
+        <p class="texto-muted">Completá los datos de tu próxima salida.</p>
+      </div>
+      <a href="panel-chofer.html" class="btn btn-secundario">Volver</a>
+    </header>
+
+    <section class="panel-seccion">
+      <form id="form-publicar-salida" class="formulario-salida">
+        <label>Origen<input id="salida-origen" type="text" required></label>
+        <label>Destino<input id="salida-destino" type="text" required></label>
+        <label>Fecha y hora de salida<input id="salida-fecha-hora" type="datetime-local" required></label>
+        <label>Asientos disponibles<input id="salida-asientos" type="number" min="1" step="1" required></label>
+        <label>Precio<input id="salida-precio" type="number" min="0" step="0.01" required></label>
+        <button type="submit" class="btn btn-principal">Publicar viaje</button>
+        <p id="mensaje-salida" class="mensaje-salida" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="../js/viajes-programados.js"></script>
+  <script src="../js/tema.js"></script>
+</body>
+</html>

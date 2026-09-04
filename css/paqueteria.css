@@ -1,0 +1,167 @@
+.pagina-paqueteria {
+  align-items: flex-start;
+  background: linear-gradient(135deg, #eef6ff 0%, #f8fafc 55%, #ecfdf5 100%);
+  padding: 32px 20px;
+}
+
+.pagina-paqueteria .app-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+  max-width: 760px;
+  min-height: auto;
+  padding: 28px;
+}
+
+.paqueteria-header {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+  padding-bottom: 22px;
+}
+
+.paqueteria-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 26px;
+}
+
+.paqueteria-nav .btn,
+.form-actions .btn {
+  width: auto;
+}
+
+.paqueteria-etiqueta,
+.section-kicker {
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.paqueteria-header h1 {
+  color: #0f172a;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.paqueteria-header .subtitle {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.paqueteria-intro {
+  margin-bottom: 20px;
+}
+
+.paqueteria-intro h2 {
+  color: #172033;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.paqueteria-intro p:last-child {
+  color: #64748b;
+}
+
+.aviso-paqueteria {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  color: #334155;
+  line-height: 1.5;
+  margin-top: 22px;
+  padding: 15px 18px;
+}
+
+.aviso-paqueteria strong {
+  color: #1d4ed8;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group-wide {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #172033;
+  font: inherit;
+  min-height: 46px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  outline: 3px solid rgba(37, 99, 235, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+.mensaje-confirmacion {
+  color: #166534;
+  font-weight: 600;
+  margin-top: 16px;
+  min-height: 1.4em;
+}
+
+@media (max-width: 600px) {
+  .pagina-paqueteria {
+    padding: 16px 10px;
+  }
+
+  .pagina-paqueteria .app-container {
+    padding: 20px 16px;
+  }
+
+  .paqueteria-nav,
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .paqueteria-nav .btn,
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-wide {
+    grid-column: auto;
+  }
+}

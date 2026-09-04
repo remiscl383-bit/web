@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incorporación de chofer - RemisCL</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/tema-oscuro.css">
+</head>
+<body class="body-login">
+  <main class="contenedor-login">
+    <header class="header-login">
+      <h1>Alta de chofer</h1>
+      <p>Solicitá tu incorporación a RemisCL</p>
+    </header>
+
+    <form id="form-registro-chofer" class="form-login">
+      <div class="campo-form">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" required>
+      </div>
+
+      <div class="campo-form">
+        <label for="apellido">Apellido</label>
+        <input id="apellido" name="apellido" type="text" required>
+      </div>
+
+      <div class="campo-form">
+        <label for="dni">DNI</label>
+        <input id="dni" name="dni" type="text" required>
+      </div>
+
+      <div class="campo-form">
+        <label for="celular">Celular</label>
+        <input id="celular" name="celular" type="tel" value="+5493644" required>
+      </div>
+
+      <div class="campo-form">
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+
+      <div class="campo-form">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" minlength="6" required>
+      </div>
+
+      <p id="mensaje-registro" class="mensaje-error" aria-live="polite"></p>
+      <button type="submit" class="btn btn-principal">Solicitar alta de chofer</button>
+    </form>
+
+    <p class="footer-login"><a href="login-chofer.html">Ya soy chofer</a></p>
+  </main>
+
+  <script type="module" src="../js/registro-chofer.js"></script>
+  <script src="../js/tema.js"></script>
+</body>
+</html>
